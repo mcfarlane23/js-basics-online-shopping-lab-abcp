@@ -48,12 +48,12 @@ function viewCart() {
 function total() {
   var pricePerItemInCart = [];
  var totalPrice = 0
- 
+
  for(var i = 0; i < cart.length; i++) {
  var itemPrice = cart[i][Object.keys(cart[i])]
    pricePerItemInCart.push(itemPrice)
    }
- 
+
  for (var j =0; j<pricePerItemInCart.length; j++) {
    totalPrice = pricePerItemInCart[j]+=totalPrice
  }
@@ -66,7 +66,18 @@ total(cart)
 function removeFromCart(item) {
   // write your code here
 
-}
+  for (var i = 0; i <cart.length; i++) {
+      if (cart[i].hasOwnProperty(item)) {
+        cart.splice(i, 1)
+        return cart
+      } 
+    }
+    console.log('That item is not in your cart.')
+    return cart
+  }
+
+  removeFromCart('watermelon')
+    
 function placeOrder(cardNumber) {
   // write your code here
   if (!creditCard) {
