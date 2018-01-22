@@ -28,7 +28,7 @@ function viewCart() {
     console.log('your shopping cart is empty')
 
   }else if (cart.length === 1) {
-    var printOneitem = `in your cart, ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`
+    var prints a one-item = `in your cart, ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`
     console.log(printOneItem)
 
   } else if (cart.length === 2) {
