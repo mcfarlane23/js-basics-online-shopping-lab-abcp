@@ -70,20 +70,25 @@ function removeFromCart(item) {
       if (cart[i].hasOwnProperty(item)) {
         cart.splice(i, 1)
         return cart
-      } 
+      }
     }
     console.log('That item is not in your cart.')
     return cart
   }
 
   removeFromCart('watermelon')
-    
+
 function placeOrder(cardNumber) {
   // write your code here
-  if (!creditCard) {
-     console.log("We don't have a credit card on file for you to place your order.");
-  } else {
-    console.log("Your total cost is $" + total() + ", which will be charged to the card " + creditCard + ".");
-    cart = [];
-  }
- }
+  function placeOrder(cardNumber) {
+    if(cardNumber) {
+      console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
+      for (var i = cart.length; i>= 0; i--) {
+        cart.pop();
+      } 
+      } else 
+        console.log('Sorry, we don\'t have a credit card on file for you.')
+  return cart;
+    }
+
+  placeOrder()
