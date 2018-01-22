@@ -46,23 +46,27 @@ function viewCart() {
 }
 
 function total() {
-  let t = 0
-  return t
-  // write your code here
+  var pricePerItemInCart = [];
+ var totalPrice = 0
+ 
+ for(var i = 0; i < cart.length; i++) {
+ var itemPrice = cart[i][Object.keys(cart[i])]
+   pricePerItemInCart.push(itemPrice)
+   }
+ 
+ for (var j =0; j<pricePerItemInCart.length; j++) {
+   totalPrice = pricePerItemInCart[j]+=totalPrice
+ }
+ return totalPrice
 }
+total(cart)
+  // write your code here
+
 
 function removeFromCart(item) {
   // write your code here
 
-   var itemInCart = false
-   for(var i = 0; i < cart.length; i++){
-     if (cart[i].hasOwnProperty(item)) {
-      itemInCart = true;
-      cart.splice(i, 1);
-     }
-   }
 }
-
 function placeOrder(cardNumber) {
   // write your code here
   if (!creditCard) {
